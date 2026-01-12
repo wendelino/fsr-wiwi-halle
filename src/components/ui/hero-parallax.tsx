@@ -152,7 +152,7 @@ export const HeroParallaxCard = ({
   >
     <Image
       alt={card.src}
-      className="absolute inset-0 h-full w-full cursor-none select-none rounded-lg object-cover"
+      className="absolute inset-0 h-full w-full cursor-none select-none rounded-lg bg-muted object-cover"
       draggable={false}
       height={orientation === "horizontal" ? 192 : 256}
       src={card.src}

@@ -1,22 +1,24 @@
 "use client";
 
 import { cva, type VariantProps } from "class-variance-authority";
+import { CheckCircle } from "lucide-react";
 import { type HTMLMotionProps, motion } from "motion/react";
 import type * as React from "react";
-
 import { cn } from "@/lib/utils";
 
 const ctaVariants = cva(
-  "relative overflow-hidden rounded-2xl p-8 md:p-10 lg:p-12",
+  "relative my-16 rounded-2xl p-6 md:my-24 md:p-10 lg:p-16",
   {
     variants: {
       variant: {
         default: "border border-border bg-card shadow-sm",
+
         gradient:
           "border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent",
         outline:
           "border-2 border-border bg-transparent transition-colors hover:border-primary/50",
         highlight: "bg-primary text-primary-foreground",
+        ghost: "p-0 lg:p-0",
       },
     },
     defaultVariants: {
@@ -174,7 +176,7 @@ export const CTAFeatureList = ({
     {features.map((feature, index) => (
       <motion.li
         animate={{ opacity: 1, x: 0 }}
-        className="flex items-start gap-3 text-sm md:text-base"
+        className="flex items-center gap-3 text-sm md:text-base"
         initial={{ opacity: 0, x: -10 }}
         key={feature}
         transition={{
@@ -183,7 +185,7 @@ export const CTAFeatureList = ({
           ease: [0.25, 0.4, 0.25, 1],
         }}
       >
-        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+        <CheckCircle className="h-4 w-4" />
         <span>{feature}</span>
       </motion.li>
     ))}

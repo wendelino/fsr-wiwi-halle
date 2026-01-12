@@ -129,3 +129,7 @@
 .width-wrapper {
   @apply container mx-auto px-6;
 }
+
+.cta-wrapper {
+  @apply mx-auto max-w-7xl;
+}
