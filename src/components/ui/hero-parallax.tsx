@@ -72,7 +72,7 @@ export const HeroParallax = ({
           opacity,
         }}
       >
-        <motion.div className="mb-10 flex flex-row-reverse gap-10 md:mb-24 md:gap-24">
+        <motion.div className="mb-10 flex flex-row-reverse gap-10">
           {firstRow.map((card) => (
             <HeroParallaxCard
               card={{ src: card }}
@@ -82,7 +82,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="mb-10 flex flex-row gap-10 md:mb-24 md:gap-24">
+        <motion.div className="mb-10 flex flex-row gap-10">
           {secondRow.map((card) => (
             <HeroParallaxCard
               card={{ src: card }}
@@ -92,7 +92,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse gap-10 space-x-reverse md:gap-24">
+        <motion.div className="flex flex-row-reverse gap-10 space-x-reverse">
           {thirdRow.map((card) => (
             <HeroParallaxCard
               card={{ src: card }}
@@ -141,7 +141,9 @@ export const HeroParallaxCard = ({
   <motion.div
     className={cn(
       "group/product relative shrink-0",
-      orientation === "horizontal" ? "aspect-4/3 w-64" : "aspect-3/4 w-48"
+      orientation === "horizontal"
+        ? "aspect-4/3 w-64 md:w-80"
+        : "aspect-3/4 w-48 md:w-60"
     )}
     key={card.src}
     style={{
